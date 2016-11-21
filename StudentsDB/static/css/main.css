@@ -1,0 +1,45 @@
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+#group-selector {
+    margin-top: 30px;
+}
+
+#group-selector select {
+    margin: 0;
+    width: 85%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    height: 30px;
+    line-height: 30px;
+    color: #555;
+}
+
+.alert {
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+#add-button {
+    margin-bottom: 10px;
+}
+
+.pagination {
+    margin-top: 100px;
+}
+
+footer {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+caption {
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
+
+th, td {
+    text-align: center;
+}

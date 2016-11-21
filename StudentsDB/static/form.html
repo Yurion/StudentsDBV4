@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Сервіс Обліку Студентів</title>
+    <meta name="description" content="Система Обліку Студентів Навчального Закладу">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Вставка HTML5 поєднується з Respond.js для підтримки в IE8 елементів HTML5 та медіа-запитів -->
+    <!-- ЗАСТЕРЕЖЕННЯ: файл Respond.js не працює, якщо ви проглядаєте сторінку відкривши її з файлової системи -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <!--<style type="text/css">-->
+    <!--.col-sm-3, .col-xs-2, .col-xs-12, .col-xs-7 {-->
+    <!--border: 1px solid #8fb529;-->
+    <!--}-->
+    <!--</style>-->
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<!--Start Conteiner-->
+<div class="container">
+
+    <header class="row" id="header">
+        <h1 class="col-xs-12">Форма редагування Студента</h1>
+    </header>
+
+    <!--Start Main Page Content-->
+    <div class="row">
+        <div class="col-xs-12" id="content-column">
+
+            <form class="form-horizontal" role="form" action="">
+                <div class="form-group">
+                    <label for="inputName" class="col-xs-2 control-label">Ім'я*</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="inputName"
+                               placeholder="Ім'я" required minlength="3" autofocus autocomplete="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputFatherName" class="col-xs-2 control-label">По-батькові</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="inputFatherName"
+                               placeholder="По-батькові" minlength="3">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputSecondName" class="col-xs-2 control-label">Прізвище*</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="inputSecondName"
+                               placeholder="Прізвище" required minlength="3">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputNumberTicket" class="col-xs-2 control-label">№ Білету*</label>
+                    <div class="col-sm-3">
+                        <input type="number" class="form-control" id="inputNumberTicket"
+                               placeholder="№ Білету" required min="1" max="6000">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputBirthDay" class="col-xs-2 control-label">День народження</label>
+                    <div class="col-sm-3">
+                        <input type="date" class="form-control" id="inputBirthDay">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputFile" class="col-xs-2 control-label">Фото</label>
+                    <div class="col-sm-6">
+                        Наразі: <a href="#">my_foto_example.jpg</a>
+                        <br>
+                        <input type="checkbox"> Очистити
+                        <br/>
+                        <br/>
+                        Змінити: <input type="file" id="exampleInputFile">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputGroup" class="col-xs-2 control-label">Група*</label>
+                    <div class="col-sm-3">
+                        <select class="form-control" id="inputGroup">
+                            <option value="">МтМ - 21, Подоба Віталій (№ 254)</option>
+                            <option value="">МтМ - 22, Корост Андрій (№ 2123)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputNotes" class="col-xs-2 control-label">Додаткові Нотатки</label>
+                    <div class="col-sm-3">
+                        <textarea class="form-control" id="inputNotes" rows="3" maxlength="100"></textarea>
+                    </div>
+                </div>
+
+                <section class="row">
+                    <div class="col-xs-7">
+                        <div class="text-center">
+                            <button class="btn btn-large btn-primary" type="submit" value="">Зберегти</button>
+                            <button class="btn btn-large" type="button">Скасувати</button>
+                        </div>
+
+                    </div>
+                </section>
+            </form>
+
+        </div>
+    </div>
+    <!--End Main Page Content-->
+
+</div>
+<!--End Conteiner-->
+
+<!-- jQuery (потрібно для JavaScript плагінів Bootstrap) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>
