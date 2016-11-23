@@ -24,7 +24,7 @@
         <!--}-->
     <!--</style>-->
 
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/static/css/main.css">
 </head>
 
 <body>
@@ -49,9 +49,9 @@
         <nav class="row">
             <div class="col-xs-12">
                 <ul class="nav nav-tabs">
-                    <li role="presentation" class="active"><a href="#">Студенти</a></li>
-                    <li role="presentation"><a href="#">Відвідування</a></li>
-                    <li role="presentation"><a href="#">Групи</a></li>
+                    <li role="presentation" class="active"><a href="{% url "home" %}">Студенти</a></li>
+                    <li role="presentation"><a href="/journal">Відвідування</a></li>
+                    <li role="presentation"><a href="{% url "groups" %}">Групи</a></li>
                 </ul>
             </div>
         </nav>
@@ -65,7 +65,7 @@
                     Зміни скасовано.
                 </div>
                 <h2>База студентів</h2>
-                <a class="btn btn-primary" href="#" id="add-button">Додати Студента</a>
+                <a class="btn btn-primary" href="{% url "students_add" %}" id="add-button">Додати Студента</a>
             </section>
 
             <!-- Start Students Listing -->
@@ -84,9 +84,9 @@
                     <tbody>
                     <tr>
                         <td>1</td>
-                        <td><img src="img/me.jpeg" class="img-circle" height="30" width="30"></td>
-                        <td><a href="#" title="Редагувати">Корост</a></td>
-                        <td><a href="#" title="Редагувати">Андрій</a></td>
+                        <td><img src="/static/img/me.jpeg" class="img-circle" height="30" width="30"></td>
+                        <td><a href="{% url "students_edit" 1 %}" title="Редагувати">Корост</a></td>
+                        <td><a href="{% url "students_edit" 1 %}" title="Редагувати">Андрій</a></td>
                         <td>2123</td>
                         <td>
                             <div class="btn-group">
@@ -95,16 +95,16 @@
                                     Дія <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Відвідування</a></li>
-                                    <li><a href="#">Редагувати</a></li>
-                                    <li><a href="#">Видалити</a></li>
+                                    <li><a href="/journal/1">Відвідування</a></li>
+                                    <li><a href="{% url "students_edit" 1 %}">Редагувати</a></li>
+                                    <li><a href="{% url "students_delete" 1 %}">Видалити</a></li>
                                 </ul>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td><img src="img/podoba3.jpg" class="img-circle" height="30" width="30"></td>
+                        <td><img src="/static/img/podoba3.jpg" class="img-circle" height="30" width="30"></td>
                         <td><a href="#" title="Редагувати">Подоба</a></td>
                         <td><a href="#" title="Редагувати">Віталій</a></td>
                         <td>254</td>
@@ -124,7 +124,7 @@
                     </tr>
                     <tr>
                         <td>3</td>
-                        <td><img src="img/piv.png" class="img-circle" height="30" width="30"></td>
+                        <td><img src="/static/img/piv.png" class="img-circle" height="30" width="30"></td>
                         <td><a href="#" title="Редагувати">Притула</a></td>
                         <td><a href="#" title="Редагувати">Тарас</a></td>
                         <td>5332</td>
