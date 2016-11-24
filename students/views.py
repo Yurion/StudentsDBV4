@@ -21,7 +21,7 @@ def students_list(request):
          'ticket': 5332,
          'image': 'img/podoba3.jpg'}
     )
-    return render(request, 'students/students_list.html', {'students': students})
+    return render(request, 'students/students_list.html', {'students': students, 'request': request})
 
 
 def students_add(request):
@@ -49,7 +49,7 @@ def groups_list(request):
          'group_name': 'МтМ-23',
          'leader_name': 'Іванов Андрій'}
     )
-    return render(request, 'students/groups.html', {'groups': groups})
+    return render(request, 'students/groups.html', {'groups': groups, 'request': request})
 
 
 def groups_add(request):
