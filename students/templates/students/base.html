@@ -19,13 +19,13 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-{#    {% comment "table border color hightlight" %}#}
+    {% comment "table border color hightlight" %}
     <style type="text/css">
         .col-xs-4, .col-xs-8, .col-xs-12 {
             border: 1px solid #8fb529;
         }
     </style>
-{#    {% endcomment %}#}
+    {% endcomment %}
 
     <link rel="stylesheet" href="{{ PORTAL_URL }}{% static "css/main.css" %}">
     {% block extra_css %}{% endblock %}
@@ -36,8 +36,9 @@
     <header>
         <div class="row">
             <!-- Header Section -->
-            <h1 class="col-xs-8">Сервіc Обліку Студентів</h1>
+            <h1 class="col-xs-8">{% block main_logo %}Сервіc Обліку Студентів{% endblock %}</h1>
 
+            {% block selector %}
             <!-- Groups Selector -->
             <div class="col-xs-4" id="group-selector">
                 <strong>Група: </strong>
@@ -47,6 +48,7 @@
                     <option value="">МтМ - 22, Корост Андрій (№ 2123)</option>
                 </select>
             </div>
+            {% endblock selector %}
         </div>
 
         <!-- Navigation  -->
@@ -83,7 +85,7 @@
     <!-- End Main Block -->
 
     <footer class="row">
-        <small class="col-xs-12">&copy; 2016 Сервіс Обліку Студентів</small>
+        <small class="col-xs-12">{% block footer %}&copy; 2016 Сервіс Обліку Студентів{% endblock %}</small>
     </footer>
 </div>
 

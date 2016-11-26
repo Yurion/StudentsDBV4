@@ -52,29 +52,6 @@
     </section>
     <!-- End Students Listing -->
 
-    <section>
-        <nav>
-            <ul class="pagination">
-                <li>
-                    <a href="#"><span aria-hidden="true">&laquo;</span><span
-                            class="sr-only">Попередня</span></a>
-                </li>
-                <li>
-                    <a href="#">1 <span class="sr-only">(поточна)</span></a>
-                </li>
-                <li class="active">
-                    <a href="#">2 <span class="sr-only">(поточна)</span></a>
-                </li>
-                <li>
-                    <a href="#">3 <span class="sr-only">(поточна)</span></a>
-                </li>
-                <li>
-                    <a href="#">4 <span class="sr-only">(поточна)</span></a>
-                </li>
-                <li>
-                    <a href="#"><span aria-hidden="true">&raquo;</span><span class="sr-only">Наступна</span></a>
-                </li>
-            </ul>
-        </nav>
-    </section>
+    {% include "students/pagination.html" %}
+
 {% endblock %}
