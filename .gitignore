@@ -1,0 +1,26 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+.gitignore
+.idea/StudentsDBV4.iml
+.idea/dataSources.local.xml
+.idea/dataSources.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+StudentsDBV4/__pycache__/
+StudentsDBV4/students/
+media/
+students/__pycache__/
+students/migrations/__pycache__/
+students/stores/__pycache__/
+students/views/__pycache__/
+templates/
+/.idea/
