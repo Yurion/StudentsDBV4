@@ -14,7 +14,7 @@ def groups_list(request):
          'group_name': 'МтМ-23',
          'leader_name': 'Іванов Андрій'}
     )
-    return render(request, 'students/groups.html', {'groups': groups, 'request': request})
+    return render(request, 'students/groups.html', {'groups': groups})
 
 
 def groups_add(request):

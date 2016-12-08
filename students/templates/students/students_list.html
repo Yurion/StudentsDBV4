@@ -14,21 +14,75 @@
         {% if students %}
             <table class="table table-striped table-hover">
                 <thead>
+                {% with order_by=request.GET.order_by reverse=request.GET.reverse %}
                 <tr>
-                    <th><a href="#">№</a></th>
-                    <th>Фото</th>
-                    <th><a href="#">Прізвище <span>&uarr;</span></a></th>
-                    <th><a href="#">Ім'я</a></th>
-                    <th><a href="#">№ Білету</a></th>
-                    <th>Дії</th>
+                        <th>
+                            <a href="{% url "home" %}?order_by=numb{% if order_by == 'numb' and reverse != '1' %}&amp;reverse=1{% endif %}">
+                                &nbsp;&nbsp;№</a><span class="arr">
+                                {% if order_by == 'numb' %}
+                                    {% if reverse == '1' %}&uarr;{% else %}&darr;{% endif %}
+                                {% else %}
+                                    &ensp;
+                                {% endif %}
+                                </span>
+                        </th>
+
+                        <th>Фото</th>
+
+                        <th>
+                            <a href="{% url "home" %}?order_by=last_name{% if order_by == 'last_name' and reverse != '1' or order_by == '' %}&amp;reverse=1{% endif %}">
+                                Прізвище</a><span class="arr">
+                                {% if order_by == 'last_name' or order_by == '' %}
+                                    {% if reverse == '1' %}&uarr;{% else %}&darr;{% endif %}
+                                {% else %}
+                                    &nbsp;&nbsp;
+                                {% endif %}
+                                </span>
+                        </th>
+
+                        <th>
+                            <a href="{% url "home" %}?order_by=first_name{% if order_by == 'first_name' and reverse != '1' %}&amp;reverse=1{% endif %}">
+                                Ім'я</a><span class="arr">
+                                {% if order_by == 'first_name' %}
+                                    {% if reverse == '1' %}&uarr;{% else %}&darr;{% endif %}
+                                {% else %}
+                                    &nbsp;&nbsp;
+                                {% endif %}
+                                </span>
+                        </th>
+
+                        <th>
+                            <a href="{% url "home" %}?order_by=ticket{% if order_by == 'ticket' and reverse != '1' %}&amp;reverse=1{% endif %}">
+                                № Білету</a><span class="arr">
+                                {% if order_by == 'ticket' %}
+                                    {% if reverse == '1' %}&uarr;{% else %}&darr;{% endif %}
+                                {% else %}
+                                    &nbsp;&nbsp;
+                                {% endif %}
+                                </span>
+                        </th>
+
+                        <th>Дії</th>
                 </tr>
                 </thead>
                 <tbody>
                 {% for student in students %}
                     <tr>
-                        <td>{{ forloop.counter }}</td>
-                        <td><img src="{{ PORTAL_URL }}{% static student.image %}" class="img-circle" height="30"
-                                 width="30"></td>
+                        <td>
+                            {% if order_by == 'numb' and reverse == '1' %}
+                                {{ forloop.revcounter }}
+                            {% else %}
+                                {{ forloop.counter }}
+                            {% endif %}
+                        </td>
+                        <td>
+                            <img  {% if student.photo %}
+                                src="{{ student.photo.url }}"
+                            {% else %}
+                                src="{{ PORTAL_URL }}{% static "img/default_user.png" %}"
+                            {% endif %}
+                                class="img-circle" height="30"
+                                width="30"></td>
                         <td><a href="{% url "students_edit" student.id %}"
                                title="Редагувати">{{ student.last_name }}</a></td>
                         <td><a href="{% url "students_edit" student.id %}"
@@ -50,10 +104,11 @@
                     </tr>
                 {% endfor %}
                 </tbody>
+            {% endwith %}
             </table>
         {% else %}
             <div class="alert alert-info" role="alert">
-                    Поки що не має студентів.
+                Поки що не має студентів.
             </div>
         {% endif %}
     </section>

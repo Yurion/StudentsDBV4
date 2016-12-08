@@ -108,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'UA'  # 'UTC'
 
 USE_I18N = True
 
@@ -123,3 +123,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # PORTAL_URL = 'http://localhost:8000/'  # unused
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# admin:
+# login: root, email: root@gmail.com, pass: root1234

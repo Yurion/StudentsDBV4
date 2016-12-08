@@ -1,25 +1,43 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from ..models import Student
+
+previews_order = 'last_name'
+previews_reverse = ''
+# students = Student.objects.all().order_by(previews_order)
 
 
 def students_list(request):
-    students = (
-        {'id': 1,
-         'first_name': 'Віталій',
-         'last_name': 'Подоба',
-         'ticket': 235,
-         'image': 'img/me.jpeg'},
-        {'id': 2,
-         'first_name': 'Корост',
-         'last_name': 'Андрій',
-         'ticket': 2123,
-         'image': 'img/piv.png'},
-        {'id': 3,
-         'first_name': 'Притула',
-         'last_name': 'Тарас',
-         'ticket': 5332,
-         'image': 'img/podoba3.jpg'}
-    )
+    students = Student.objects.all().order_by('last_name')
+
+    # global students
+    global previews_order
+    global previews_reverse
+
+    order_by = request.GET.get('order_by', '')
+    if order_by in ('last_name', 'first_name', 'ticket'):
+        previews_order = order_by
+        students = students.order_by(order_by)
+        if request.GET.get('reverse', '') == '1':
+            previews_reverse = '1'
+            students = students.reverse()
+        else:
+            previews_reverse = ''
+
+    if order_by == 'numb':
+        if request.GET.get('reverse', '') == '1':
+            print('numb reverse')
+            if previews_reverse == '1':
+                students = students.order_by(previews_order)
+            else:
+                students = students.order_by(previews_order).reverse()
+        else:
+            print('numb')
+            if previews_reverse != '1':
+                students = students.order_by(previews_order)
+            else:
+                students = students.order_by(previews_order).reverse()
+
     return render(request, 'students/students_list.html', {'students': students, 'request': request})
 
 
