@@ -1,25 +1,27 @@
 <section>
-    <nav>
-        <ul class="pagination">
-            <li>
-                <a href="#"><span aria-hidden="true">&laquo;</span><span
-                        class="sr-only">Попередня</span></a>
-            </li>
-            <li>
-                <a href="#">1 <span class="sr-only">(поточна)</span></a>
-            </li>
-            <li class="active">
-                <a href="#">2 <span class="sr-only">(поточна)</span></a>
-            </li>
-            <li>
-                <a href="#">3 <span class="sr-only">(поточна)</span></a>
-            </li>
-            <li>
-                <a href="#">4 <span class="sr-only">(поточна)</span></a>
-            </li>
-            <li>
-                <a href="#"><span aria-hidden="true">&raquo;</span><span class="sr-only">Наступна</span></a>
-            </li>
-        </ul>
-    </nav>
+    {% if students.has_other_pages %}
+        {% with order_by=request.GET.order_by reverse=request.GET.reverse %}
+        <nav aria-label="Students navigation">
+            <ul class="pagination">
+                <li><a href="{% url "home" %}?page=1&amp;order_by={{ order_by }}&amp;reverse={{ reverse }}" aria-label="First page">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Перша</span></a>
+                </li>
+
+                {% for p in students.paginator.page_range %}
+                    <li {% if students.number == p %}class="active"{% endif %}>
+                        <a href="{% url "home" %}?page={{ p }}&amp;order_by={{ order_by }}&amp;reverse={{ reverse }}">
+                            <span>{{ p }}</span>
+                            <span class="sr-only">(current)</span></a>
+                    </li>
+                {% endfor %}
+
+                <li><a href="{% url "home" %}?page={{ students.paginator.num_pages }}&amp;order_by={{ order_by }}&amp;reverse={{ reverse }}" aria-label="Last page">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Остання</span></a>
+                </li>
+            </ul>
+        </nav>
+        {% endwith %}
+    {% endif %}
 </section>
