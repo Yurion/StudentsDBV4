@@ -16,11 +16,11 @@ gen
 .idea/vcs.xml
 .idea/workspace.xml
 StudentsDBV4/__pycache__/
-StudentsDBV4/students/
 media/
 students/__pycache__/
 students/migrations/__pycache__/
 students/stores/__pycache__/
 students/views/__pycache__/
-templates/
 /.idea/
+/db.sqlite3
+/StudentsDBV4/db.py
