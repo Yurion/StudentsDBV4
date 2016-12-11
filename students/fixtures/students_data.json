@@ -1,0 +1,182 @@
+[
+{
+    "model": "students.student",
+    "pk": 1,
+    "fields": {
+        "first_name": "\u0412\u0456\u0442\u0430\u043b\u0456\u0439",
+        "last_name": "\u041f\u043e\u0434\u043e\u0431\u0430",
+        "middle_name": "",
+        "birthday": "2016-07-13",
+        "photo": "me.jpeg",
+        "ticket": 538,
+        "notes": "",
+        "student_group": null
+    }
+},
+{
+    "model": "students.student",
+    "pk": 2,
+    "fields": {
+        "first_name": "\u042e\u0440\u0456\u0439",
+        "last_name": "\u0425\u043e\u043c\u0438\u043a",
+        "middle_name": "\u0412\u043e\u043b\u043e\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447",
+        "birthday": "1983-08-23",
+        "photo": "",
+        "ticket": 209,
+        "notes": "",
+        "student_group": 3
+    }
+},
+{
+    "model": "students.student",
+    "pk": 3,
+    "fields": {
+        "first_name": "\u041d\u0430\u0437\u0430\u0440",
+        "last_name": "\u0411\u043e\u0434\u043d\u0430\u0440\u0447\u0443\u043a",
+        "middle_name": "",
+        "birthday": "2016-12-06",
+        "photo": "piv.png",
+        "ticket": 563,
+        "notes": "\u043d\u0435\u0434\u043e\u0443\u0447\u043a\u0430",
+        "student_group": null
+    }
+},
+{
+    "model": "students.student",
+    "pk": 4,
+    "fields": {
+        "first_name": "\u041d\u0430\u0437\u0430\u0440",
+        "last_name": "\u0414\u043c\u0438\u0442\u0440\u0456\u0432",
+        "middle_name": "",
+        "birthday": "2016-12-07",
+        "photo": "",
+        "ticket": 827,
+        "notes": "\u0443\u0441\u043f\u0456\u0448\u043d\u0438\u0439 \u0441\u0442\u0443\u0434\u0435\u043d\u0442",
+        "student_group": null
+    }
+},
+{
+    "model": "students.student",
+    "pk": 5,
+    "fields": {
+        "first_name": "\u0414\u043d\u0456\u0441\u0442\u0440\u044f\u043d\u0441\u044c\u043a\u0438\u0439",
+        "last_name": "\u0411\u043e\u0433\u0434\u0430\u043d",
+        "middle_name": "",
+        "birthday": "2016-12-12",
+        "photo": "podoba3.jpg",
+        "ticket": 660,
+        "notes": "\u0431\u043e\u043b\u0431\u0454\u0441",
+        "student_group": 3
+    }
+},
+{
+    "model": "students.student",
+    "pk": 6,
+    "fields": {
+        "first_name": "\u041a\u043e\u043b\u044f",
+        "last_name": "\u041f\u043e\u0434\u0443\u043d",
+        "middle_name": "",
+        "birthday": "2016-12-14",
+        "photo": "",
+        "ticket": 637,
+        "notes": "",
+        "student_group": 1
+    }
+},
+{
+    "model": "students.student",
+    "pk": 7,
+    "fields": {
+        "first_name": "\u041f\u0435\u0442\u0440\u043e",
+        "last_name": "\u042f\u0446\u0443\u043b\u0430",
+        "middle_name": "\u0406\u0432\u0430\u043d\u043e\u0432\u0438\u0447",
+        "birthday": "2016-12-06",
+        "photo": "",
+        "ticket": 1002,
+        "notes": "",
+        "student_group": null
+    }
+},
+{
+    "model": "students.group",
+    "pk": 1,
+    "fields": {
+        "title": "MTM-21",
+        "leader": 2,
+        "notes": "additional notes"
+    }
+},
+{
+    "model": "students.group",
+    "pk": 2,
+    "fields": {
+        "title": "MTM-22",
+        "leader": 1,
+        "notes": ""
+    }
+},
+{
+    "model": "students.group",
+    "pk": 3,
+    "fields": {
+        "title": "MTM-25",
+        "leader": null,
+        "notes": ""
+    }
+},
+{
+    "model": "students.exam",
+    "pk": 1,
+    "fields": {
+        "exam_name": "\u0424\u0456\u0437\u0438\u043a\u0430",
+        "date": "2016-12-11",
+        "teacher_name": "\u0413\u0435\u0440\u0430\u0441\u0438\u043c\u0435\u043d\u043a\u043e \u0412. \u041e.",
+        "exam_group": 1,
+        "notes": ""
+    }
+},
+{
+    "model": "students.exam",
+    "pk": 2,
+    "fields": {
+        "exam_name": "\u041c\u0430\u0442\u0435\u043c\u0430\u0442\u0438\u043a\u0430",
+        "date": "2016-12-24",
+        "teacher_name": "\u041c\u0438\u043a\u0438\u0442\u043e\u043d \u0422. \u0428.",
+        "exam_group": 2,
+        "notes": ""
+    }
+},
+{
+    "model": "students.exam",
+    "pk": 3,
+    "fields": {
+        "exam_name": "\u0406\u0441\u0442\u043e\u0440\u0456\u044f",
+        "date": "2016-12-14",
+        "teacher_name": "\u0428\u0435\u0440\u0435\u043c\u0435\u0442 \u0406. \u0412.",
+        "exam_group": 3,
+        "notes": ""
+    }
+},
+{
+    "model": "students.exam",
+    "pk": 4,
+    "fields": {
+        "exam_name": "\u041c\u0430\u0442. \u0430\u043d\u0430\u043b\u0456\u0437",
+        "date": "2016-12-11",
+        "teacher_name": "\u0420\u043e\u043c\u0430\u043d\u0435\u043d\u043a\u043e \u0406. \u0406.",
+        "exam_group": 2,
+        "notes": ""
+    }
+},
+{
+    "model": "students.exam",
+    "pk": 5,
+    "fields": {
+        "exam_name": "\u041c\u0435\u0445\u0430\u043d\u0456\u043a\u0430",
+        "date": "2016-12-17",
+        "teacher_name": "\u0412\u0438\u043d\u043d\u0438\u0447\u0435\u043d\u043a\u043e \u041d. \u041b.",
+        "exam_group": 2,
+        "notes": ""
+    }
+}
+]

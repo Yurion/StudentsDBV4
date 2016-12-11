@@ -16,8 +16,8 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.conf import settings
-from  django.conf.urls.static import static
-from students.views import groups_views, journal_view, students_views
+from django.conf.urls.static import static
+from students.views import groups_views, journal_view, students_views, exam_view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -36,6 +36,12 @@ urlpatterns = [
 
     # Visiting urls
     url(r'^journal/$', journal_view.visiting_list, name='journal'),
+
+    # Exams url
+    url(r'^exams/$', exam_view.exam_list, name='exams'),
+    # url(r'^exams/add/$', exam_view.exam_list, name='exams'),
+    # url(r'^exams/(?P<eid>\d+)/edit/$', exam_view.exam_list, name='exams'),
+    # url(r'^exams/(?P<eid>\d+)/delete/$', exam_view.exam_list, name='exams'),
 ]
 
 if settings.DEBUG:

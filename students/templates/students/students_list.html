@@ -70,11 +70,14 @@
                 {% for student in students %}
                     <tr>
                         <td>
+                        {% comment %}
                             {% if numb_order == 'numb' and reverse == '1' %}
                                 {{ forloop.revcounter }}
                             {% else %}
                                 {{ forloop.counter }}
                             {% endif %}
+                        {% endcomment %}
+                            {{ students.start_index|add:forloop.counter0 }}
                         </td>
                         <td>
                             <img  {% if student.photo %}
