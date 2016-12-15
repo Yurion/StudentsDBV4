@@ -44,3 +44,19 @@ caption {
 th, td {
     text-align: center;
 }
+
+.required_symb {
+    color: #d81e08;
+}
+
+.help-block {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 6px;
+    padding-bottom: 7px;
+}
+
+.messages {
+    padding-bottom: 30px;
+    text-decoration: none;
+}
